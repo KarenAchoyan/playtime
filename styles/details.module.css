@@ -14,6 +14,12 @@
 .firstImg>div:last-child{
     height: auto;
 }
+.description{
+    font-family: sans-serif;
+    margin-top: 10px;
+    line-height: 30px;
+    padding-right: 30px;
+}
 .qrs{
     width: 70px!important;
     z-index: 2222;

@@ -22,7 +22,7 @@ const Details = () => {
     const {add, remove, isFavorite, isBasket, removeFromFavorite, addFavorite} = useContext(BasketContext)
     const {price, currentRate} = useContext(RateContext)
     const [title, setTitle] = useState("");
-    const [metal, setMetal] = useState("")
+    const [description, setDescription] = useState("")
     const dispatch = useDispatch();
     const router = useRouter();
     const {name} = router.query;
@@ -45,10 +45,10 @@ const Details = () => {
     }, [dispatch, name])
 
     useEffect(() => {
-        const t = (locale === 'en') ? product?.title_en : (locale === 'ru') ? product?.title_ru : product?.title
-        const m = (locale === 'en') ? product?.metal_en : (locale === 'ru') ? product?.metal_ru : product?.metal
+        const t = (locale === 'ru') ? product?.title_ru : product?.title
+        const m = (locale === 'ru') ? product?.description : product?.description
         setTitle(t)
-        setMetal(m)
+        setDescription(m)
     }, [locale, product])
 
 
@@ -104,13 +104,11 @@ const Details = () => {
                     <div className={styles.firstImg}>
                         <div className={styles.slider}>
                             <div>
-                                <Image.PreviewGroup items={imagesCarousel}>
-                                    <Image  src={process.env.IMAGE_URL2 + product?.avatar} alt=""/>
-                                </Image.PreviewGroup>
+                                <Image src={process.env.IMAGE_URL2 + product?.avatar} alt=""/>
                             </div>
 
                         </div>
-                        <Image  src={process.env.IMAGE_URL + product?.blog?.qrs?.image}
+                        <Image src={process.env.IMAGE_URL + product?.blog?.qrs?.image}
                                className={styles.qrs} alt=""/>
 
                     </div>
@@ -121,14 +119,8 @@ const Details = () => {
                         <div className={styles.paragraph}>
                             <p>{t("infoOfProduct")}</p>
                         </div>
-                        <div className={styles.spanTextRaw}>
-                            {metal !== "undefined" && metal !== null ? <span>{metal}</span> : null}
-                            {product?.weight !== "undefined" && product?.weight !== null ?
-                                <span>{t("weightOf")}` {product?.weight} {t('grams')}</span> : null}
-                            {/*{product.respect!=="undefined" && product.respect !== null ?*/}
-                            {/*<span>{t("respect")}` {product.respect}</span>*/}
-                            {/*:null}*/}
-                            <span>{t("available")}</span>
+                        <div className={styles.description}>
+                            {description}
                         </div>
                         <div className={styles.priceText}>
                             <span>{price(product?.price)} {currentRate?.current}</span>

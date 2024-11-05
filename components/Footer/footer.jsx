@@ -44,49 +44,6 @@ const Footer = ({ contact, categories }) => {
 
     return (
         <div>
-            <footer className={styles.footer}>
-                <div>
-                    <Image preview={false} src="/logo.png" alt="logo" className="logo" />
-                </div>
-                <div className={styles.pages}>
-                    <div>
-                        <h4>{t("categories")}</h4>
-                        <ul>
-                            {categories.map((item) => {
-                                const { name, name_ru, id } = item;
-                                const isActive = router.query.category === name;
-                                const title = (locale === 'ru') ? name_ru : name
-                                return (
-                                    <li key={id} className={isActive ? styles.activeCategory : null}>
-                                        <Link href={`/products/${id}`}>
-                                            {title}
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>{t("pages")}</h4>
-                        <ul>
-                            <li><Link href={'/about'}>{t("about_us")}</Link></li>
-                            <li><Link href={'/contact'}>{t("contact_us")}</Link></li>
-                            <li><Link href={'/faqs'}>FAQ</Link></li>
-                            <li><Link href={'/blog'}>{t('blog')}</Link></li>
-                            <li><Link href={'/privacy'}>Privacy and Policy</Link></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>{t("feedback")}</h4>
-                        <ul>
-                            <li><span><MailOutlined /></span><a href={"mailto:" + contact.email}>{contact.email}</a></li>
-                            <li><span><PhoneOutlined /></span><a
-                                href={`whatsapp://send?phone=${contact.phone}`}>{contact.phone}</a></li>
-                        </ul>
-
-                    </div>
-                </div>
-            </footer>
             <Lastpage scroll={scroll} />
         </div>
     );

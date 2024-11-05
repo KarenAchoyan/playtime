@@ -87,21 +87,6 @@ const Step3 = ({prevStep,inputValues, setValues, submitForm}) => {
                             <div>
                             </div>
                         </div>
-                        <div className={styles.regInputs}>
-                            <div>
-                                <label htmlFor="">{t('payment_option')}</label>
-                                <Form.Item
-                                    name="payment_type"
-                                    rules={[
-                                        {required: true, message: t("contact_field_error_payment_type")},
-                                    ]}
-                                >
-                                    <Input disabled />
-                                </Form.Item>
-                            </div>
-                            <div>
-                            </div>
-                        </div>
                         <div className={styles.buttonsForm}>
                             <Button onClick={prevStep} type="primary" htmlType="button">
                                 {t('back')}

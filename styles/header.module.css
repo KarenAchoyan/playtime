@@ -14,7 +14,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 130, 246, 0.61);
     z-index: 2222222222222222222222222222222222222;
 
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 .loaderPage img {
-    width: 100px;
+    width: 200px;
     animation: 1s animateLoader infinite;
 }
 
@@ -174,9 +174,10 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    width: 100px;
 }
-
+.logo img{
+    height: 90px!important;
+}
 .contentHeader {
     display: flex;
     width: calc(100% - 100px);

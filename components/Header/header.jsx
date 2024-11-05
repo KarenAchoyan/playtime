@@ -75,12 +75,12 @@ const Header = ({categories}) => {
     return (
         <div>
             <header className={styles.header}>
-                <link rel="icon" type="image/png" href="/logo.png"/>
+                <link rel="icon" type="image/png" href="/2.png"/>
                 <div className={styles.contentHeader}>
                     <div className={styles.rowLogo}>
                         <div className={styles.logo}>
                             <Link href={'/home'}>
-                                <Image preview={false} src="/logo.png" alt=""/>
+                                <Image preview={false} src="/2.png" alt=""/>
                             </Link>
                         </div>
                         <DrawerMenu categories={categories}/>

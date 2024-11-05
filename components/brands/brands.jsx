@@ -9,6 +9,7 @@ import styles from "../../styles/brands.module.css"
 import Item from "./item";
 import {useDispatch, useSelector} from "react-redux";
 import {getBrands} from "../../store/brand/actions";
+import {t} from "../../utils/utils";
 
 const Brands = () => {
     const dispatch = useDispatch();
@@ -72,7 +73,7 @@ const Brands = () => {
     return (
         <>
             <div className={styles.container}>
-                <h1>Բաժիններ</h1>
+                <h1>{t("categories")}</h1>
                 <Slider {...settings}>
                     {brands?.map((item)=>(
                         <Item key={item.id} item={item}/>

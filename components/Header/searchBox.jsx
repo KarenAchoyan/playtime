@@ -53,7 +53,7 @@ const SearchBox = ({onClose}) => {
                                 onChange={handleSearchChange}
                                 placeholder={t("search")}
                             />
-                            <Button type="primary">Search</Button>
+                            <Button type="primary">{t('search')}</Button>
                             {searchTerm.length > 1 &&
                                 <div style={{
                                     maxHeight: filteredSearch?.length > 0 ? "550px" : "auto",

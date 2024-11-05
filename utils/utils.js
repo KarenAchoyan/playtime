@@ -33,7 +33,7 @@ export const Loader = () => {
         };
     }, []);
 
-    return loading ? <div className={styles.loaderPage}><img src="/logo.png"/></div> : null;
+    return loading ? <div className={styles.loaderPage}><img src="/2.png"/></div> : null;
 };
 
 

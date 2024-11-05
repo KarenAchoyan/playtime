@@ -102,29 +102,9 @@ const Basket = () => {
     }
 
     const fetchPaymentStatus = async (data) => {
-        values.products = data
-        try {
-            const response = await fetch('https://poels.dahk.am/api/payment/signIn', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(values)
-            });
 
-            if (response.ok) {
-                const data = await response.json();
-                if (Number(values.paymentType) === 1) {
-                    window.location.href = data.formUrl ? data.formUrl : "#"
-                } else {
-                    window.open(data.approval_url ? data.approval_url : "#");
-                }
-            } else {
-                console.error('Failed to fetch payment status');
-            }
-        } catch (error) {
-            console.error('Error fetching payment status:', error);
-        }
+        window.location.href = "/payment/success";
+
     };
 
     const handleSubmit = () => {
@@ -132,7 +112,7 @@ const Basket = () => {
         fetchPaymentStatus(localStorage.getItem('basket') || "[]")
     };
     return (
-        <div>
+        <div style={{marginTop: '100px'}}>
             {step === 0 ?
                 <div className={styles.basket} ref={containerRef}>
                     {basketItems.length > 0 ? (
@@ -186,10 +166,9 @@ const Basket = () => {
                     )}
                 </div>
                 : step === 1 ? <Step1 next={() => setStep(2)} setValues={setValues} prevStep={() => setStep(0)}/>
-                    : step === 2 ? <Step2 total={total} region={values?.region} next={() => setStep(3)} setValues={setValues} prevStep={() => setStep(1)}/>
-                        : step === 3 ? <Step3 submitForm={handleSubmit} inputValues={values} setValues={setValues}
-                                              prevStep={() => setStep(2)}/>
-                            : null
+                    : step === 2 ? <Step3 submitForm={handleSubmit} inputValues={values} setValues={setValues}
+                                          prevStep={() => setStep(2)}/>
+                        : null
             }
             <Products products={products}/>
         </div>

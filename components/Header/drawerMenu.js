@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/drawermenu.module.css';
 import headerStyle from '../../styles/footer.module.css';
 import { FacebookOutlined, InstagramOutlined } from "@ant-design/icons";
+import {t} from "../../utils/utils";
 
 const DrawerMenu = ({ categories, locale }) => {
     const [visible, setVisible] = useState(false);
@@ -30,7 +31,7 @@ const DrawerMenu = ({ categories, locale }) => {
                         style={{borderColor:visible? "white" : "black"}}
                         className={`${styles.drawerButton} ${visible ? styles.opened : ''}`}
                     >
-                        <span>Categories</span>
+                        <span>{t("categories")}</span>
                     </div>
                     <div className={headerStyle.socials}>
                         <div className={headerStyle.itemSocial}>
