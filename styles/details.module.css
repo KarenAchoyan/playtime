@@ -1,0 +1,195 @@
+
+.productRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.firstImg {
+    width: 40%;
+    margin-top: 70px;
+    display: flex;
+    align-items: end;
+
+}
+.firstImg>div:last-child{
+    height: auto;
+}
+.qrs{
+    width: 70px!important;
+    z-index: 2222;
+}
+.modal{
+    max-width: 70%;
+    width: max-content;
+    height: 85vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    z-index: 222222;
+}
+.modal div{
+    height: 100%;
+}
+.background{
+    width: 100%;
+    height: 100vh;
+    background: #000000a2;
+    z-index: 222221;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+.modal img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.slider{
+    position: relative;
+    padding-left: 12%;
+    /*padding-right: 12%;*/
+    width: 420px;
+}
+.firstImg img {
+    width: 70%;
+    margin: auto;
+}
+
+.text {
+    display: inline;
+
+    align-items: center;
+    width: 50%;
+    margin-top: 85px;
+
+}
+
+.title h1 {
+    font-family: Mardoto;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 47px;
+}
+
+.spanText {
+    margin-top: 15px;
+    font-family: Mardoto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+
+}
+
+.paragraph {
+    margin-top: 20px;
+}
+
+.paragraph > p {
+    font-family: Mardoto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+}
+
+.spanTextRaw > span {
+    display: block;
+    margin-top: 5px;
+
+
+    font-family: Mardoto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+
+
+}
+
+.spanTextRaw > span:last-child {
+    margin-top: 20px;
+    color: #D09F4E;
+    font-family: Mardoto;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+
+}
+
+.priceText {
+    margin-top: 15px;
+}
+
+.priceText span {
+    font-family: Mardoto;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons > button:last-child {
+    margin-left: 20px;
+}
+
+.buttons > button > span {
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 950px) {
+    .productRow {
+        flex-direction: column;
+    }
+    .slider{
+        padding-right: 12%;
+        width: 100%;
+    }
+
+    .firstImg {
+        width: 100%;
+    }
+
+    .firstImg > img {
+        width: 400px;
+        display: flex;
+    }
+    .qrs{
+        display: none;
+    }
+    .productRow {
+        margin: auto;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .buttons > button:last-child {
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-left: 0;
+    }
+
+
+    .title h1 {
+        font-size: 25px;
+        flex-wrap: wrap;
+    }
+
+    .text {
+        padding: 0px 40px;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 405px) {
+    .buttons > button:last-child {
+        margin-left: 0;
+    }
+}

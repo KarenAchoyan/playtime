@@ -1,0 +1,243 @@
+.page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.title {
+    margin-top: 100px;
+    margin-left: 90px;
+    font-family: Mardoto;
+}
+
+.location {
+    margin-left: 130px;
+    margin-top: 40px;
+
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    /*margin-bottom: 72px;*/
+    display: flex;
+    margin-bottom: 50px;
+
+}
+.info a{
+    color: black;
+    text-decoration: none;
+}
+.info a:hover{
+    color: #976E2B;
+}
+
+.info span {
+    color: #976E2B;
+    font-family: Mardoto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.info p {
+    margin-top: 10px;
+    color: #1A1A1A;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    font-family: Mardoto;
+}
+
+.registration {
+    width: 50%;
+}
+
+.regTitle {
+    margin-top: 100px;
+
+}
+
+.regTitle h2 {
+    color: #000;
+    font-family: Mardoto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.background {
+    margin-top: 40px;
+    background: #1A1A1A;
+    width: 80%;
+}
+
+.regInputs {
+    /*margin: auto;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*flex-direction: column;*/
+    /*margin-top: 45px;*/
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.regInputs:last-child {
+    width: 100%;
+}
+
+.regInputs:last-child div:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.iconContact {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconContact img{
+    width: 30px;
+}
+
+.regInputs input {
+    margin-left: 5px;
+    width:calc(100% - 10px);
+    color: white;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: var(--Black, #1A1A1A);
+    border: 1px solid white;
+    border-radius: 25px 0 0 0;
+    padding-left: 10px;
+}
+.regInputs input::placeholder{
+    color: rgba(180, 180, 180, 0.62);
+}
+.regInputs textarea::placeholder{
+    color: rgba(180, 180, 180, 0.62);
+}
+.regInputs label {
+    color: var(--White, #FFF);
+    font-family: Mardoto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    margin-left: 13px;
+}
+
+.regPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.regInputs textarea {
+    /*width: 430px;*/
+    /*height: 119px;*/
+    width: calc(100% - 10px);
+    flex-shrink: 0;
+    background: var(--Black, #1A1A1A);
+    border: 1px solid white;
+    border-radius: 25px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding:10px
+}
+
+.regInputs button {
+    margin-top: 25px;
+    width: 160px;
+    height: 45px;
+    border-radius: 15px 0 0 0;
+    background: #FFF;
+    cursor: pointer;
+    border: none;
+    color: #000;
+    font-family: Mardoto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.greenSuccess{
+    color: green;
+    font-family: "Mardoto Black";
+    margin-left: 10px;
+}
+.error{
+    color: red;
+    font-size: 14px;
+    font-family: Mardoto;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .page {
+        align-items: center;
+        flex-direction: column;
+    }
+    .registration{
+       width: 600px;
+    }
+    .title{
+        margin-left: 0;
+        text-align: center;
+    }
+    .location{
+        margin-left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .info{
+        width: calc(100% / 3 - 10px);
+    }
+}
+@media only screen and (max-width: 950px){
+    .location{
+        flex-direction: column;
+    }
+    .info p{
+        line-height: 25px;
+    }
+    .background{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 960px){
+    .registration{
+        width: 90%;
+        margin: auto;
+    }
+    .regInputs{
+        width: 100%;
+    }
+    .info {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+}

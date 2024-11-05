@@ -1,0 +1,73 @@
+.content {
+    width: 100%;
+    background-color: #1E1A1A;
+}
+
+.contentText {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.contentText h2 {
+    font-weight: 400;
+    font-family: mard;
+    font-size: 30px;
+    line-height: 35px;
+    font-family: MardotoLight;
+    color: white;
+}
+
+.contentRaw {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 94%;
+    margin: auto;
+}
+.item{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: calc(100% / 5 - 10px);
+}
+.item img {
+    height: 380px!important;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: contain;
+    object-position: top;
+}
+.item video {
+    height: 380px!important;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: contain;
+    object-position: top;
+}
+
+@media (max-width: 1100px) {
+    .contentRaw {
+        flex-wrap: wrap;
+    }
+    .item{
+        width: calc(100% / 4 - 10px);
+    }
+}
+@media (max-width: 900px) {
+    .item{
+        width: calc(100% / 3 - 10px);
+    }
+}
+
+@media (max-width: 780px) {
+    .contentRaw {
+    }
+    .item{
+        width: calc(100% / 2 - 10px);
+    }
+    .item img{
+        height: auto!important;
+    }
+    .contentText h2 {
+        font-size: 20px;
+    }
+}

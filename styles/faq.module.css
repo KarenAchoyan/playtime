@@ -1,0 +1,114 @@
+
+
+.title{
+    text-align: center;
+    margin-top: 90px;
+}
+.title>h1{
+    font-family: Mardoto;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 105px;
+
+}
+.faqDivs{
+    margin: 70px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    cursor: pointer;
+}
+.faqItems{
+    cursor: pointer;
+    width: 50%;
+    margin-top: 10px;
+    background-color: #F5F5F5;
+    padding: 10px 20px;
+    overflow: hidden;
+    transition: 1s;
+}
+.drbInfo{
+}
+.drbInfoRaw{
+    background-color: #F5F5F5;
+    width: 100%;
+}
+.faqInfo{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 20px;
+    flex-direction: column;
+}
+.active{
+}
+.deactive{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.faqInfo>div:first-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.faqInfo>div:last-child{
+    text-align: left;
+    width: 100%;
+    margin-top: 20px;
+    transition: 1s all;
+}
+.faqInfo>div:last-child p{
+    font-size: 18px;
+    font-family: Mardoto;
+
+}
+.faqInfo>div>p{
+    font-family: Mardoto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.faqInfo span{
+    font-size: 24px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 800px){
+    .faqItems{
+        width: 75%;
+    }
+    .title>h1{
+        font-size: 50px;
+
+    }
+}
+@media only screen and (max-width: 650px){
+    .faqInfo>div>p{
+        font-size: 13px;
+    }
+
+    .faqInfo span {
+        font-size: 18px;
+    }
+    .faqInfo>div:last-child {
+        margin-top: 25px;
+    }
+    .faqInfo>div:last-child p{
+        font-size: 15px;
+        letter-spacing: 1.5px;
+
+    }
+}
+@media only screen and (max-width: 400px){
+    .faqItems{
+        width: 85%;
+    }
+}
+

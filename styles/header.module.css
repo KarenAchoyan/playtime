@@ -1,0 +1,504 @@
+
+.header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    z-index: 22222;
+    top: 0;
+    background: #7ab2e7;
+}
+
+.loaderPage {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2222222222222222222222222222222222222;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loaderPage img {
+    width: 100px;
+    animation: 1s animateLoader infinite;
+}
+
+@keyframes animateLoader {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.headerMenu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.headerMenu li {
+    list-style: none;
+    font-size: 20px;
+    margin: 0 20px;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: MardotoItalic;
+    transition: 0.5s;
+    color: white;
+}
+.searchItemProduct{
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+}
+.links{
+    color: black;
+}
+.links:hover{
+    color: black;
+    opacity: 0.8;
+}
+.infoSearch{
+    padding: 10px;
+}
+.infoSearch h2{
+    font-size: 14px;
+}
+.searchBox {
+    display: flex;
+}
+
+.headerMenu a {
+    color: black;
+    text-decoration: none;
+}
+
+.priceDrb {
+    position: absolute;
+    padding-top: 32px;
+    left: 0;
+    z-index: 22222222222;
+    margin-left: -26px;
+    margin-top: 4px;
+}
+
+.priceDrbContent {
+    background-color: #c8685e;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+}
+
+.priceDrbContent > p {
+    padding: 5px 30px;
+    border-bottom: 1px solid rgba(176, 175, 175, 0.12);
+}
+
+.priceDrbContent > p:first-child {
+    border-top: 1px solid black;
+}
+
+.priceDrbContent > p:hover {
+    background-color: white;
+}
+
+.drb {
+    position: absolute;
+    padding-top: 32px;
+    z-index: 222222;
+    right: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    background: #c8685e;
+}
+
+.rotateArrow {
+    transform: rotate(-180deg);
+}
+
+.drbContent {
+    background-color: #c8685e;
+    display: flex;
+    flex-direction: column;
+}
+
+.drbContent li {
+    padding: 10px 30px;
+    list-style: none;
+    /*border: 1px solid #000000;*/
+}
+
+.drbContent li:hover {
+    background: white;
+}
+
+.drbContent a {
+    text-decoration: none;
+}
+
+.drbContent > img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border: 1px solid black;
+    order: -1;
+}
+
+.drbContent > p:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+
+.headerMenu li:hover, .headerMenu a:hover {
+    color: #D09F4E;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+}
+
+.contentHeader {
+    display: flex;
+    width: calc(100% - 100px);
+    margin: auto;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/*.contentHeader>div{*/
+/*    width: calc(100% / 3);*/
+/*}*/
+.contentHeader > div:first-child {
+    width: 30%;
+}
+
+.contentHeader > div:nth-child(3) {
+    width: 40%;
+}
+
+.contentHeader > div:last-child {
+    width: 30%;
+}
+
+
+.boxSearch {
+
+}
+
+.activeCategory a {
+    color: #976E2B;
+}
+
+.searchBox input {
+
+}
+
+.drbLangRow {
+    display: flex;
+    align-items: center;
+}
+
+.searchBox label {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.containerSearch {
+    /*padding: 50px;*/
+    width: 100%;
+}
+.searchBoxItem{
+    margin-bottom: 0;
+}
+.row{
+    display: flex;
+    height: 50px;
+    position: relative;
+}
+.row button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #e97000;
+    height: 100%;
+}
+.row button:hover{
+    background: #c15e03!important;
+}
+.row input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: #e97000;
+}
+.row input:hover{
+    border-color: #a35105;
+    outline: none;
+}
+.row input:focus{
+    border-color: #a35105;
+}
+.rowLogo{
+    display: flex;
+    align-items: center;
+}
+.rowLogo img{
+
+}
+.searchResult {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: white;
+    padding: 20px;
+    top: 100%;
+}
+
+
+
+.searchBoxBack {
+    width: 100%;
+    height: calc(100vh - 90px);
+    position: absolute;
+    background: #000000a2;
+    top: 90px;
+    left: 0;
+    z-index: 222221;
+}
+
+.contentHeader > div:last-child, .icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.icons > ul > li {
+    font-size: 20px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    font-family: Mardoto;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+
+.icons li:last-child img {
+    margin-right: 10px;
+    width: 27px;
+    border-radius: 5px;
+}
+
+
+.icons > ul > li > a:hover {
+    margin-bottom: 5px;
+}
+
+.icons a {
+    color: white;
+}
+
+.icons li:nth-child(3):hover {
+    margin-bottom: 5px;
+}
+
+.countBasket {
+    width: 16px;
+    height: 16px;
+    background-color: #e97000;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    right: -7px;
+    color: #ffffff;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language img {
+    margin-left: 10px;
+}
+
+.currentcySize {
+    font-size: 15px;
+}
+
+.languageForSize {
+    font-size: 15px !important;
+}
+
+.icons > ul > li:last-child span:last-child {
+    font-size: 11px;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media only screen and (min-width: 1800px) {
+    .contentHeader {
+        width: calc(100% - 300px);
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .headerMenu li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .headerMenu li {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+
+    .contentHeader > div:last-child {
+        width: auto;
+    }
+
+    .menuStyle {
+        width: 100%;
+        transform: translateX(-120%);
+        transition: 1s;
+        padding: 20px;
+    }
+
+    .menuStyle.active {
+        transform: translateX(0%);
+    }
+
+    .headerMenu, .contentHeader > div:first-child {
+        display: none;
+    }
+
+    .headerMobileMenu {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .headerMobileMenu > div {
+        display: flex;
+    }
+
+    .mobileTools {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+    }
+
+    .searchBoxMobile {
+
+    }
+
+    .searchBoxMobile input {
+        margin-top: 10px;
+        height: 40px;
+    }
+
+
+    .mobileTools > div {
+        width: 48%;
+    }
+
+    .closeIcon {
+        font-size: 30px;
+        padding: 10px
+    }
+
+    .lists li {
+        color: black;
+        font-size: 20px;
+        margin-top: 25px;
+        font-family: Mardoto;
+        list-style: none;
+    }
+
+    .lists {
+        padding: 10px;
+    }
+
+    .lists a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .menuStyle {
+        width: 90%;
+        height: 100vh;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 222222;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+
+    .btnMenu {
+        font-size: 30px;
+    }
+
+    .icons li:first-child, .icons li:last-child, .language {
+        display: none !important;
+    }
+
+    .mobileCurrent .language {
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .headerMenu li {
+        font-size: 15px;
+        margin: 0 3px;
+    }
+
+    .icons li {
+        font-size: 24px;
+    }
+
+    .contentHeader {
+
+    }
+}

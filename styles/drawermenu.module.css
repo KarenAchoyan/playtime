@@ -1,0 +1,119 @@
+/* Basic drawer styling */
+.headerMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.headerMenu li {
+    margin: 15px 0;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Active category styling */
+.activeCategory {
+    background-color: #1890ff; /* Primary color for active state */
+    color: white;
+}
+
+/* Hover effect for menu items */
+.headerMenu li:hover {
+    background-color: #e6f7ff; /* Light blue background on hover */
+    color: #1890ff;
+}
+
+/* Link styling */
+.headerMenu li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Drawer title styling */
+.drawerTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Button styling to match the drawer */
+.ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+}
+
+/* Drawer customization */
+.ant-drawer-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+/* drawermenu.module.css */
+.drawerStyle{
+    width: 400px;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    left: 0;
+    top: 90px;
+    padding: 10px;
+    transform: translateX(-100%);
+    transition: 0.40s ease;
+    z-index: 6;
+
+}
+.drawerStyle.active{
+    transform: translateX(0%);
+}
+.drawerContent{
+    position: relative;
+    width: 100%;
+}
+.closeMenu{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    background: #000000a2;
+    z-index: 5;
+}
+.drawerButton {
+    position: absolute;
+    left: 102.4%;
+    top: 180px;
+
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid black;
+    border-left-color: white;
+    padding: 10px 15px;
+    writing-mode: vertical-lr;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    transition:0.4s ease; /* Smooth transition for left position */
+}
+
+
+@media (max-width: 600px) {
+    .headerMenu li {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .drawerTitle {
+        font-size: 20px;
+    }
+}

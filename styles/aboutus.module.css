@@ -1,0 +1,66 @@
+.page{
+    width: 85%;
+    margin: 100px auto 20px;
+}
+.pageRaw{
+    display: flex;
+    justify-content: space-between;
+
+}
+.picture{
+    width: 40%;
+    margin: 50px;
+}
+
+.picture img{
+    width: 100%;
+
+}
+
+.text{
+    width: 60%;
+    padding:55px;
+}
+.text h3{
+    font-family: Mardoto;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-bottom: 40px;
+}
+.text p{
+    font-family: Mardoto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+.mobileReverse{}
+
+
+@media screen  and (max-width: 1100px){
+    .text{
+        width: 85%;
+    }
+    .picture{
+        width: 80%;
+    }
+    .pageRaw {
+        flex-wrap: wrap;
+    }
+
+    .mobileReverse{
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (max-width: 550px){
+    .text{
+        width: 100%;
+        padding:0;
+    }
+
+    .picture{
+        width: 100%;
+        margin: 0;
+    }
+}

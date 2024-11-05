@@ -1,0 +1,222 @@
+.row {
+    display: flex;
+    margin: auto;
+}
+
+.nav {
+    width: 360px;
+    background: #F5F5F5;
+    padding-left: 50px;
+    padding-bottom: 50px;
+}
+.filterButton{
+    font-size: 30px;
+    display: none;
+}
+
+.title {
+    font-family: "Mardoto Light";
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    font-weight: lighter;
+    width: 100%;
+}
+
+.productRow {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.productRow > div {
+    width: calc(100% / 3);
+}
+
+.headerNav {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-right: 20px;
+
+}
+
+.priceList {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+    padding-top: 20px;
+}
+
+.priceList input {
+    width: 100px;
+    height: 35px;
+
+
+}
+
+.headerNav h3 {
+    color: #000;
+    font-family: Mardoto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.headerNav p {
+    color: #000;
+    font-family: Mardoto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.productsSection {
+    width: calc(100% - 360px);
+    padding: 30px 50px 35px;
+}
+
+.filterList {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.filterList li {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+
+    color: #000;
+    font-family: Mardoto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+}
+
+.filterList h3 {
+    color: #000;
+    font-family: "Mardoto Black";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 5px;
+    margin-top: 30px;
+}
+
+.productHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.productHeader h2 {
+    color: #000;
+    font-family: Mardoto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.lastSection {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+}
+
+.productHeader p {
+    color: #000;
+    font-family: Mardoto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.iconFilter {
+    display: none;
+}
+
+.filterPrice {
+    margin-top: 30px;
+}
+
+.filterPrice > h4 {
+    font-size: 20px;
+    font-family: Mardoto;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    display: flex;
+}
+
+.inputs input {
+    padding: 10px 20px;
+    border: none;
+    width: 90px;
+}
+
+.inputs > div:last-child {
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 980px) {
+    .filterButton{
+        display: block;
+    }
+    .mobileContainer{
+        width: 80%;
+        margin: auto;
+    }
+    .nav {
+        transform: translateX(-100%);
+        position: fixed;
+        height: calc(100vh - 90px);
+        transition: 1s all;
+        top: 90px;
+        overflow-y: scroll;
+        z-index: 222222;
+        padding-bottom: 100px;
+    }
+    .headerNav{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .nav.active {
+        transform: translateX(0%);
+        transition: 1s;
+
+    }
+
+    .iconFilter {
+        display: block;
+        font-size: 25px;
+    }
+
+    .productsSection {
+        width: 100%;
+    }
+
+    .productRow > div {
+        width: calc(100% / 2);
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .productHeader {
+        flex-direction: column;
+    }
+}

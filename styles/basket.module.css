@@ -1,0 +1,384 @@
+.title > h1 {
+    font-family: Mardoto;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35px;
+    margin-top: 100px;
+    margin-bottom: 35px;
+}
+.textareaReg {
+    margin-bottom: 16px;
+}
+
+.errorInput {
+    border: 1px solid red;
+}
+
+.successInput {
+    border: 1px solid green;
+}
+.title2{
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+/*steps*/
+.row {
+    display: flex;
+    align-items: center;
+
+    width: 60%;
+    margin: auto;
+}
+
+.circleNumber {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #000;
+}
+
+.radius {
+    font-size: 18px;
+}
+
+.regPage, .lastPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+}
+.lastPage{
+    flex-direction: column;
+    align-items: center;
+}
+.lastPage .regInputs{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.lastPage .regInputs div:first-child{
+    width: 100%;
+}
+.lastPage .regInputs>div:last-child{
+    width: max-content;
+}
+
+.regInputs{
+    width: 48%;
+}
+.textareaReg{
+    width: 100%;
+}
+
+
+.buttonsForm{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 20px;
+}
+.formStep{
+    width: 60%;
+    margin: auto;
+}
+.formStepLast{
+    width: 40%;
+    margin: auto;
+}
+.buttonsForm button{
+    border-radius: 15px 0 0 0;
+    margin-left: 20px;
+    border: 1px solid black;
+}
+.buttonsForm button:first-child{
+    background: white;
+    color: black;
+}
+.buttonsForm button:last-child{
+    background: black;
+    color: white;
+}
+.active {
+    background: #976E2B;
+    color: #fff; /* Add your active state styles */
+}
+
+/*steps*/
+.paymentTypes{
+    border:1px solid black;
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    font-family: "Mardoto Light";
+    margin: 11px 0px;
+}
+.paymentTypes:first-child{
+    margin-top: 75px;
+}
+.paymentTypes:hover{
+    border-color: #976E2B;
+    cursor: pointer;
+}
+.paymentTypes h3{
+    margin-left:22px;
+}
+.basket {
+    width: 90%;
+    margin: auto;
+
+}
+.basketDiv {
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #767676;
+    border-right: 1px solid #767676;
+    border-left: 1px solid #767676;
+}
+
+.shoppingLast{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 3px solid #767676;
+    border-right: 3px solid #767676;
+    border-left: 3px solid #767676;
+}
+
+.basketItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.basketDiv:last-child {
+    border-bottom: 1px solid #767676;
+    display: flex;
+    justify-content: flex-end;
+}
+.shoppingLast:last-child {
+    border-bottom: 3px solid #767676;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 35px;
+}
+
+.shoppingStep {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+.shoppingStep > button {
+    margin-top: 30px;
+}
+
+.shoppingResult ul {
+    list-style: none;
+    width: 100%;
+
+}
+
+.shoppingResult li {
+    margin-top: 10px;
+    font-family: Mardoto;
+    display: flex;
+    justify-content: space-between;
+}
+.shoppingResult li:last-child span:first-child{
+    margin-right: 10px;
+}
+
+.shoppingResult li:last-child {
+    font-family: "Mardoto Black";
+    margin-top: 26px;
+}
+
+.basketDiv > div:first-child {
+    display: flex;
+    width: 50%;
+    overflow: hidden;
+    height: 70%;
+}
+
+.basketPicture {
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 15px;
+
+}
+.basketPicture img{
+    height: 100%!important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.basketPicture > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.basketText {
+    margin-left: 20px;
+    height: 100%;
+}
+
+.basketSpan {
+    margin-top: 20px;
+}
+
+.basketSpan > span {
+    font-family: Mardoto;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.basketParagraph {
+    margin-top: 12px;
+}
+
+.basketParagraph > p {
+    font-family: Mardoto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.buttons {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons > button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    background-color: #F5F5F5;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons span {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-family: Mardoto;
+}
+
+.price {
+}
+
+.price > span {
+    font-family: Mardoto;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+
+
+
+}
+
+.icons {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons > ul {
+    display: flex;
+    margin-right: 10px;
+}
+
+.icons li {
+    list-style: none;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.mobileTitle{
+    display: none;
+}
+
+@media only screen and (max-width: 650px) {
+    .icons > ul {
+        margin-right: 0;
+        flex-direction: column-reverse;
+    }
+    .icons > ul > li:first-child{
+        display: none;
+    }
+    .regInputs{
+        width: 100%;
+    }
+    .regPage, .lastPage {
+        padding: 0;
+    }
+    .basketPicture{
+        margin-left: 15px;
+    }
+    .basketText{
+        display: none;
+    }
+    .mobileTitle{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .mobileTitle .basketText{
+        display: block;
+        margin-left: 0;
+    }
+    .basketItem{
+        margin-left: 20px;
+    }
+    .basketDiv{
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .basketItem {
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    .buttons {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+    .icons{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        /*display: none;*/
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .shoppingResult{
+        width: auto;
+    }
+}

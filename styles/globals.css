@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+@font-face {
+    font-family: MardotoBlack;
+    src: url(/fonts/Mardoto-Black.ttf);
+}
+@font-face {
+    font-family: MardotoBlackItalic;
+    src: url(/fonts/Mardoto-BlackItalic.ttf);
+}
+@font-face {
+    font-family: MardotoLight;
+    src: url(/fonts/Mardoto-Light.ttf);
+}
+@font-face {
+    font-family: Mardoto;
+    src: url(/fonts/Mardoto-Light.ttf);
+}
+@font-face {
+    font-family: MardotoItalic;
+    src: url(/fonts/Mardoto-Italic.ttf);
+}
+
+
+
+.slick-prev, .slick-next{
+    width: 12px!important;
+}
+.slick-dots{
+    bottom: 10px!important;
+}
+.slick-dots li button{
+    width: 30px!important;
+    height: 3px!important;
+    flex-shrink: 0!important;
+    background: var(--Gold, #976E2B)!important;
+    opacity: 0.2;
+    padding: 0!important;
+}
+.slick-dots li.slick-active button{
+    opacity: 1;
+}
+.slick-dots li button:before{
+    color: transparent;
+}
+.slick-dots li.slick-active button:before{
+    color: transparent!important;
+}
+
+.slick-dots li{
+    width: auto!important;
+    height: auto!important;
+}
