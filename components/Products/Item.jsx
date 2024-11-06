@@ -72,11 +72,11 @@ const Item = ({item, addCart}) => {
             <>
                 <Link href={{
                     pathname: '/product/[name]/',
-                    query: {name:  item.id},
+                    query: {name: item.id},
                 }}>
 
                     <Image
-                        src={process.env.IMAGE_URL2  + item.avatar}
+                        src={process.env.IMAGE_URL2 + item.avatar}
                         style={{opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s'}}
                         onLoad={() => setIsLoader(false)}
                         width={400}
@@ -85,37 +85,40 @@ const Item = ({item, addCart}) => {
                         priority
                     />
                 </Link>
+                <div className={styles.wishlist}>
+
+                    {!isFavorite(item) ? (
+                        <div>
+                            <HeartOutlined onClick={addToFavorite}/>
+                        </div>
+                    ) : (
+                        <div className={styles.active}>
+                            <HeartFilled onClick={removeToFavorite}/>
+                        </div>
+                    )}
+
+
+                </div>
                 {isLoading ?
                     <Skeleton/>
                     :
                     <div className={styles.info}>
-
                         <div>
                             <div className={styles.span}>
-                                <span>{truncateContent(title, 27)}</span>
+                                <span>Սեղանի խաղ</span>
+                                <span>{truncateContent(title, 21)}</span>
                             </div>
                             <div className={styles.paragraph}>
                                 <p>{price(item.price)} {currentRate?.current}</p>
                             </div>
                         </div>
-                        <div className={styles.icon}>
-                            <ul>
-                                <li>
-                                    {!isBasket(item) ? (
-                                        <ShoppingOutlined onClick={addToBaskets}/>
-                                    ) : (
-                                        <ShoppingFilled onClick={removeToBasket}/>
-                                    )}
-                                </li>
-                                <li>
-                                    {!isFavorite(item) ? (
-                                        <HeartOutlined onClick={addToFavorite}/>
-                                    ) : (
-                                        <HeartFilled onClick={removeToFavorite}/>
-                                    )}
-                                </li>
-                            </ul>
-                        </div>
+
+                        {!isBasket(item) ? (
+                            <button onClick={addToBaskets}><ShoppingOutlined/><span>Add Cart</span></button>
+                        ) : (
+                            <button onClick={removeToBasket}><ShoppingFilled/><span>Remove</span></button>
+                        )}
+
                     </div>
                 }
 

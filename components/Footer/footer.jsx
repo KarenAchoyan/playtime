@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from "../../styles/footer.module.css"
-import {
-    FacebookOutlined,
-    InstagramOutlined,
-    MailOutlined,
-    PhoneOutlined,
-    PushpinOutlined
-} from "@ant-design/icons";
-import Lastpage from "../Lastpage/lastpage";
+
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { t } from "../../utils/utils";
-import { Image } from "antd";
+import Image from "next/image";
 
 const Footer = ({ contact, categories }) => {
     const [addresses, setAddresses] = useState([])
@@ -44,7 +37,17 @@ const Footer = ({ contact, categories }) => {
 
     return (
         <div>
-            <Lastpage scroll={scroll} />
+            <div className={styles.footer}>
+               <div className={styles.clouds}>
+                   <Image width={200} height={300} src="./cloud-2.svg" alt=""/>
+                   <Image width={200} height={300} src="./cloud-3.svg" alt=""/>
+                   <Image width={200} height={300} src="./footer-bottom-shape-1.svg" alt=""/>
+                   <Image width={200} height={300} src="./footer-doll-left.svg" alt=""/>
+                   <Image width={200} height={300} src="./footer-doll-right.svg" alt=""/>
+
+                   <Image width={200} height={300} src="./cloud-4.svg" alt=""/>
+               </div>
+            </div>
         </div>
     );
 };
