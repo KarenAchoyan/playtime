@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useEffect, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useRef, useState} from 'react';
 import styles from "../../../styles/details.module.css"
 import {CheckOutlined, HeartOutlined, ShoppingOutlined} from "@ant-design/icons";
 
@@ -11,12 +11,12 @@ import CountContext from "../../../providers/countContext";
 import BasketContext from "../../../providers/BasketContext";
 import RateContext from "../../../providers/rateContext";
 import {t} from "../../../utils/utils";
-import {Image, Skeleton} from "antd";
+import {Skeleton} from "antd";
+import Image from "next/image";
 
 const Details = () => {
     const product = useSelector((state) => state.product?.selectedProduct?.data);
     const isFetching = useSelector((state) => state.product?.isFetching);
-
     const [isShow, setIsShow] = useState(false);
     const {setCount} = useContext(CountContext)
     const {add, remove, isFavorite, isBasket, removeFromFavorite, addFavorite} = useContext(BasketContext)
@@ -30,7 +30,7 @@ const Details = () => {
     const stylesNotification = {
         transform: isShow ? "translate(0%)" : "translate(150%)"
     }
-
+    const [isAtTargetSection, setIsAtTargetSection] = useState(false);
 
     function addNotification() {
         setIsShow(true)
@@ -38,7 +38,6 @@ const Details = () => {
             setIsShow(false)
         }, 2000)
     }
-
 
     useEffect(() => {
         dispatch(getProduct.request({id: name}));
@@ -93,62 +92,52 @@ const Details = () => {
         removeFromFavorite(product)
     }, [product, removeFromFavorite, setCount])
 
-
-    const imagesArray = product?.images ? JSON.parse(product?.images) : [];
-
-    const imagesCarousel = imagesArray.map(x => process.env.IMAGE_URL + x)
     return (
-        <div className={styles.product}>
+        <div className={styles.container}>
             <Skeleton loading={isFetching} active>
                 <div className={styles.productRow}>
-                    <div className={styles.firstImg}>
-                        <div className={styles.slider}>
-                            <div>
-                                <Image src={process.env.IMAGE_URL2 + product?.avatar} alt=""/>
-                            </div>
-
-                        </div>
-                        <Image src={process.env.IMAGE_URL + product?.blog?.qrs?.image}
-                               className={styles.qrs} alt=""/>
-
+                    <div className={styles.images}>
+                        <Image width={900} height={1000} src={process.env.IMAGE_URL2 + product?.avatar} alt=""/>
+                        {product?.images.map((item, index) => (
+                            <Image key={index} width={900} height={1000} src={process.env.IMAGE_URL + item?.image}
+                                   alt=""/>
+                        ))}
                     </div>
-                    <div className={styles.text}>
-                        <div className={styles.title}>
-                            <h1>{title}</h1>
-                        </div>
-                        <div className={styles.paragraph}>
-                            <p>{t("infoOfProduct")}</p>
-                        </div>
-                        <div className={styles.description}>
-                            {description}
-                        </div>
-                        <div className={styles.priceText}>
-                            <span>{price(product?.price)} {currentRate?.current}</span>
-                        </div>
-                        <div className={styles.buttons}>
+                    <div className={`${styles.text}`}
+                    >
+                        <h1>Denim Jumpsuit {}</h1>
+                        <p>
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
+                            eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+                            eleifend leo.
+                        </p>
+                        <h2>$39.99</h2>
+                        <div className={styles.row}>
                             {!isBasket(product) ?
-                                <Button onClick={addToBaskets}>
+                                <button className={styles.addToBasketBtn} onClick={addToBaskets}>
                                     {t("add")}
                                     <span><ShoppingOutlined/></span>
-                                </Button>
+                                </button>
                                 :
-                                <Button onClick={removeToBasket} style={{background: '#D09F4E'}}>
+                                <button className={styles.addToBasketBtn} style={{background: '#D09F4E'}}
+                                        onClick={removeToBasket}>
                                     {t("remove")}
                                     <span><ShoppingOutlined/></span>
-                                </Button>
+                                </button>
                             }
                             {!isFavorite(product) ?
-                                <Button onClick={addToFavorites}>
+                                <button className={styles.addToBasketBtn} onClick={addToFavorites}>
                                     {t("add")}
                                     <span><HeartOutlined/></span>
-                                </Button>
+                                </button>
                                 :
-                                <Button style={{background: '#D09F4E'}} onClick={removeToFavorite}>
+                                <button className={styles.addToBasketBtn} style={{background: '#D09F4E'}}
+                                        onClick={removeToFavorite}>
                                     {t("remove")}
                                     <span><HeartOutlined/></span>
-                                </Button>
+                                </button>
                             }
-
                         </div>
                     </div>
                 </div>

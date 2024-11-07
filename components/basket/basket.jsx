@@ -11,7 +11,6 @@ import {getProductsAll} from "../../store/products/actions";
 import RateContext from "../../providers/rateContext";
 import {t} from "../../utils/utils";
 import Step1 from "./step_1";
-import Step2 from "./step_2";
 import Step3 from "./step_3";
 
 

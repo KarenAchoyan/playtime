@@ -39,13 +39,13 @@ const Footer = ({ contact, categories }) => {
         <div>
             <div className={styles.footer}>
                <div className={styles.clouds}>
-                   <Image width={200} height={300} src="./cloud-2.svg" alt=""/>
-                   <Image width={200} height={300} src="./cloud-3.svg" alt=""/>
-                   <Image width={200} height={300} src="./footer-bottom-shape-1.svg" alt=""/>
-                   <Image width={200} height={300} src="./footer-doll-left.svg" alt=""/>
-                   <Image width={200} height={300} src="./footer-doll-right.svg" alt=""/>
+                   <Image width={200} height={300} src="/cloud-2.svg" alt=""/>
+                   <Image width={200} height={300} src="/cloud-3.svg" alt=""/>
+                   <Image width={200} height={300} src="/footer-bottom-shape-1.svg" alt=""/>
+                   <Image width={200} height={300} src="/footer-doll-left.svg" alt=""/>
+                   <Image width={200} height={300} src="/footer-doll-right.svg" alt=""/>
 
-                   <Image width={200} height={300} src="./cloud-4.svg" alt=""/>
+                   <Image width={200} height={300} src="/cloud-4.svg" alt=""/>
                </div>
             </div>
         </div>

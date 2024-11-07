@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Details from "../../components/Products/Details/details";
 import Products from "../../components/Products/products";
 import {useDispatch, useSelector} from "react-redux";
@@ -9,10 +9,15 @@ import {getImportantProducts, getProductsAll} from "../../store/products/actions
 const Index = () => {
     const products = useSelector((state) => state?.product?.importantProducts);
     const dispatch = useDispatch();
+    const bottomSectionRef = useRef(null);
 
     useEffect(() => {
         dispatch(getImportantProducts.request());
     }, [dispatch]);
+
+
+
+
     return (
         <div>
             <Details/>

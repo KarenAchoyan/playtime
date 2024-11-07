@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styles from '../../styles/basket.module.css';
-import {Button, Form, Input, message} from "antd";
-import {useDispatch, useSelector} from "react-redux";
-import {paymentSignIn} from "../../store/payment/actions";
+import {Button, Form, Input} from "antd";
 import {t, validateArmenianOrRussianPhoneNumber} from "../../utils/utils";
 
 const Step3 = ({prevStep,inputValues, setValues, submitForm}) => {

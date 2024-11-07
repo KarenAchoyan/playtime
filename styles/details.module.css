@@ -1,70 +1,21 @@
-
+.container{
+    width: 90%;
+    margin: auto;
+}
 .productRow {
     display: flex;
-    justify-content: space-between;
 }
 
-.firstImg {
-    width: 40%;
-    margin-top: 70px;
-    display: flex;
-    align-items: end;
-
+.images{
+    width: 60%;
 }
-.firstImg>div:last-child{
-    height: auto;
-}
-.description{
-    font-family: sans-serif;
-    margin-top: 10px;
-    line-height: 30px;
-    padding-right: 30px;
-}
-.qrs{
-    width: 70px!important;
-    z-index: 2222;
-}
-.modal{
-    max-width: 70%;
-    width: max-content;
-    height: 85vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    z-index: 222222;
-}
-.modal div{
-    height: 100%;
-}
-.background{
-    width: 100%;
-    height: 100vh;
-    background: #000000a2;
-    z-index: 222221;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-}
-.modal img{
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
-.slider{
-    position: relative;
-    padding-left: 12%;
-    /*padding-right: 12%;*/
-    width: 420px;
-}
-.firstImg img {
-    width: 70%;
-    margin: auto;
+.images img{
+    width: 90%;
+    margin-top: 50px;
 }
 
 .text {
     display: inline;
-
     align-items: center;
     width: 50%;
     margin-top: 85px;
@@ -87,105 +38,68 @@
 
 }
 
-.paragraph {
+/* Add to Basket Button */
+.addToBasketBtn {
+    background: #ff8087;;
+    color: white;
+    border-radius: 25px;
+    padding: 12px 45px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 3px #ff8087;
+    border: 2px dashed #ffffff;
+    text-transform: uppercase;
     margin-top: 20px;
 }
-
-.paragraph > p {
-    font-family: Mardoto;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    text-align: left;
+.addToBasketBtn span{
+    margin-left: 5px;
 }
-
-.spanTextRaw > span {
-    display: block;
-    margin-top: 5px;
-
-
-    font-family: Mardoto;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-
-
+.row{
+    display: flex;
 }
-
-.spanTextRaw > span:last-child {
-    margin-top: 20px;
-    color: #D09F4E;
-    font-family: Mardoto;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26px;
-
+.row button{
+    margin-right: 30px;
+    cursor: pointer;
 }
-
-.priceText {
-    margin-top: 15px;
-}
-
-.priceText span {
+.text>h1{
     font-family: Mardoto;
+    margin-bottom: 30px;
+}
+.text>p{
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.625em;
+    font-family: Mardoto;
+    margin: 0 0 15px 0;
+}
+.text{
+    width: 30%;
+}
+.text>h2{
     font-size: 30px;
     font-weight: 400;
-    line-height: 35px;
-}
-
-.buttons {
-    margin-top: 30px;
-}
-
-.buttons > button:last-child {
-    margin-left: 20px;
-}
-
-.buttons > button > span {
-    margin-left: 20px;
+    font-family: Mardoto;
 }
 
 @media only screen and (max-width: 950px) {
-    .productRow {
+    .images{
+        width: 100%;
+    }
+    .row{
         flex-direction: column;
     }
-    .slider{
-        padding-right: 12%;
+    .images img{
         width: 100%;
-    }
-
-    .firstImg {
-        width: 100%;
-    }
-
-    .firstImg > img {
-        width: 400px;
-        display: flex;
-    }
-    .qrs{
-        display: none;
+        height: auto;
     }
     .productRow {
         margin: auto;
+        flex-direction: column-reverse;
     }
 
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .buttons > button:last-child {
-        margin-top: 5px;
-        margin-right: 5px;
-        margin-left: 0;
-    }
-
-
-    .title h1 {
-        font-size: 25px;
-        flex-wrap: wrap;
-    }
 
     .text {
         padding: 0px 40px;
@@ -195,7 +109,5 @@
 }
 
 @media only screen and (max-width: 405px) {
-    .buttons > button:last-child {
-        margin-left: 0;
-    }
+
 }
