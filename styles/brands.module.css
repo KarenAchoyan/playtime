@@ -1,7 +1,10 @@
 .container>h1{
-    text-align: center;
     font-family: MardotoBlack;
     margin-bottom: 30px;
+    margin-left: 55px;
+    margin-top: 50px;
+    font-weight: lighter;
+    font-family: 'Mardoto';
 }
 .item{
     font-family: sans-serif;

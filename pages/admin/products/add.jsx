@@ -14,14 +14,14 @@ const Add = () => {
     const dispatch = useDispatch();
     const subs = useSelector((state) => state.category?.subCategories?.data);
     const categories = useSelector((state) => state.category?.categories);
-    const blogs = useSelector((state) => state.blog?.blogs);
+    const isAdd = useSelector((state) => state?.product.isAdding);
 
     const [form] = Form.useForm();
     const [avatarFile, setAvatarFile] = useState(null);
     const [avatarPreview, setAvatarPreview] = useState(null);
     const [imageFiles, setImageFiles] = useState([]);
     const [imagePreviews, setImagePreviews] = useState([]);
-
+    const [isSubmit, setIsSubmit]=useState(false)
     const [parent_id, setParentId] = useState(null)
 
     useEffect(() => {
@@ -90,16 +90,23 @@ const Add = () => {
         if (avatarFile) {
             formData.append('avatar', avatarFile);
         }
-
+        setIsSubmit(true);
         dispatch(addProduct.request(formData));
-        form.resetFields();
-        setImageFiles([]);
-        setImagePreviews([]);
-        setAvatarFile(null)
-        setAvatarPreview("")
-
-        message.success('Product successfully added!');
     };
+
+    useEffect(() => {
+        if (isAdd === false && isSubmit) {
+            message.success('Product successfully added!');
+            form.resetFields();
+            setImageFiles([]);
+            setImagePreviews([]);
+            setAvatarFile(null);
+            setAvatarPreview("");
+            setIsSubmit(false)
+        }
+    }, [form, isAdd, isSubmit]);
+
+
 
     return (
         <App>
@@ -234,7 +241,7 @@ const Add = () => {
                     </Upload>
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" disabled={isAdd && isSubmit} htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>
