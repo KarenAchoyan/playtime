@@ -31,6 +31,8 @@ const AllBrandPage = () => {
         form.setFieldsValue({
             name: brand.name,
             name_ru: brand.name_ru,
+            url: brand.url,
+            count: brand.count,
         });
         setEditModalVisible(true);
     }
@@ -60,6 +62,11 @@ const AllBrandPage = () => {
             title: 'Name (RU)',
             dataIndex: 'name_ru',
             key: 'name_ru',
+        },
+        {
+            title: 'Count',
+            dataIndex: 'count',
+            key: 'count',
         },
         {
             title: 'Action',
@@ -96,6 +103,8 @@ const AllBrandPage = () => {
         formData.append('avatar', imageFile);
         formData.append('name', values.name);
         formData.append('name_ru', values.name_ru);
+        formData.append('count', values.count);
+        formData.append('url', values.url);
         formData.append('id', editingBrand.id);
 
         dispatch(updateBrand.request({ id: editingBrand.id, formData }));
@@ -143,6 +152,20 @@ const AllBrandPage = () => {
                             rules={[{ required: true, message: 'Please enter the brand name in Russian' }]}
                         >
                             <Input placeholder="Enter the brand name in Russian" />
+                        </Form.Item>
+                        <Form.Item
+                            label="Url"
+                            name="url"
+                            rules={[{ required: true, message: 'Please enter the brand url' }]}
+                        >
+                            <Input placeholder="Enter the brand Url" />
+                        </Form.Item>
+                        <Form.Item
+                            label="Count"
+                            name="count"
+                            rules={[{ required: true, message: 'Please enter the brand count' }]}
+                        >
+                            <Input placeholder="Enter the brand Count" />
                         </Form.Item>
                         <Form.Item label="Image">
                             <Upload

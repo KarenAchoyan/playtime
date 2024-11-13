@@ -17,8 +17,8 @@ const Item = ({item}) => {
                     <Image src={process.env.IMAGE_URL2  + item.image}
                            style={{opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s'}}
                            onLoad={() => setIsLoading(false)}
-                           width={1200}
-                           height={500}
+                           width={1800}
+                           height={900}
                            alt="banner image"/>
 
                 </a>

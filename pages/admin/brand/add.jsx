@@ -28,6 +28,8 @@ const AddBrand = () => {
         const formData = new FormData();
         formData.append('name', values.name);
         formData.append('name_ru', values.name_ru);
+        formData.append('url', values.url);
+        formData.append('count', values.count);
         if (imageFile) {
             formData.append('image', imageFile);
         }
@@ -57,6 +59,20 @@ const AddBrand = () => {
                     rules={[{ required: true, message: 'Please enter the brand name in Russian' }]}
                 >
                     <Input placeholder="Enter the brand name in Russian" />
+                </Form.Item>
+                <Form.Item
+                    label="Url"
+                    name="url"
+                    rules={[{ required: true, message: 'Please enter the brand url' }]}
+                >
+                    <Input placeholder="Enter the brand url" />
+                </Form.Item>
+                <Form.Item
+                    label="Count"
+                    name="count"
+                    rules={[{ required: true, message: 'Please enter the brand Count' }]}
+                >
+                    <Input placeholder="Enter the brand Count" />
                 </Form.Item>
 
                 <Form.Item label="Image" name="image">

@@ -33,7 +33,7 @@ const Review = () => {
                 :
                 <div className={styles.content}>
                     <div className={styles.imageParent}>
-                        <Image priority width={1000} height={500} src={process.env.IMAGE_URL2 +slogan?.image1} alt='Review' className={styles.image}/>
+                        <Image priority width={1500} height={800} src={process.env.IMAGE_URL2 +slogan?.image1} alt='Review' className={styles.image}/>
                         <div className={styles.info} style={{color: slogan?.color}}>
                             <p dangerouslySetInnerHTML={{__html: content}}></p>
                         </div>

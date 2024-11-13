@@ -11,6 +11,7 @@ import faqReducer from "./faq/reducer";
 import sloganReducer from "./slogan/reducer";
 import paymentReducer from "./payment/reducer";
 import brandReducer from "./brand/reducer";
+import reviewReducer from "./reviews/reducer";
 
 
 const rootReducer = combineReducers({
@@ -25,7 +26,8 @@ const rootReducer = combineReducers({
     faq:faqReducer,
     slogan:sloganReducer,
     payment:paymentReducer,
-    brand:brandReducer
+    brand:brandReducer,
+    review:reviewReducer
 });
 
 export default rootReducer;

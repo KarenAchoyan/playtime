@@ -29,7 +29,9 @@ html {
     src: url(/fonts/Mardoto-Italic.ttf);
 }
 
-
+.iiz{
+    max-width: 90%!important;
+}
 
 .slick-prev, .slick-next{
     width: 12px!important;

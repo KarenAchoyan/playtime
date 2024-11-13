@@ -11,6 +11,7 @@ import {faqSaga} from "./faq/saga";
 import {sloganSaga} from "./slogan/saga";
 import {paymentSaga} from "./payment/saga";
 import {brandSaga} from "./brand/saga";
+import {reviewSaga} from "./reviews/saga";
 
 function* rootSaga() {
     yield all([
@@ -25,7 +26,8 @@ function* rootSaga() {
         userSaga(),
         faqSaga(),
         sloganSaga(),
-        brandSaga()
+        brandSaga(),
+        reviewSaga()
     ]);
 }
 
