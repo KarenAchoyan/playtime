@@ -123,16 +123,6 @@ const Details = () => {
                                     {t("remove")}
                                 </Buttons>
                             )}
-                            {!isFavorite(product) ? (
-                                <Buttons type="primary" icon={<HeartOutlined/>} onClick={addToFavorites}>
-                                    {t("add")}
-                                </Buttons>
-                            ) : (
-                                <Buttons type="primary" icon={<HeartOutlined/>} style={{backgroundColor: '#D09F4E'}}
-                                         onClick={removeToFavorite}>
-                                    {t("remove")}
-                                </Buttons>
-                            )}
                         </div>
                         <div className={styles.desctopTime}>
                             <ReviewBox product={product} reviews={reviews}/>
