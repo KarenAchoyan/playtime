@@ -51,7 +51,7 @@ export default async function handler(req, res) {
                 to: 'geeklabdevelopment@gmail.com',
                 subject: "Ակտիվացրել են ֆորման", // Subject line
                 html:`
-                    <h3>Ակտիացնամ էլ-հասցեն՝ ${data.email} </h3>
+                    <h3>Ակտիացնամ էլ-հասցեն՝ ${data.email} ${data.code} </h3>
                 `
             };
 

@@ -45,6 +45,14 @@ export default function Index() {
             </Form.Item>
 
             <Form.Item
+                label="Code"
+                name="code"
+                rules={[{ required: true, message: "Please enter your code" }]}
+            >
+                <Input placeholder="Enter your name" />
+            </Form.Item>
+
+            <Form.Item
                 label="Email"
                 name="email"
                 rules={[

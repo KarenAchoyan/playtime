@@ -10,33 +10,42 @@ export default async function handler(req, res) {
         }
 
         try {
-            // Generate QR Code as a Data URL
-            const qrCode = await QRCode.toDataURL(url);
+            // Generate QR code as a Data URL
+            const qrCodeDataURL = await QRCode.toDataURL(url);
 
-            // Set up PDF generation
+            // Create a PDF document
             const doc = new PDFDocument({
-                size: [58 * 2.83465, 40 * 2.83465], // Convert mm to points (1mm = 2.83465 points)
-                margins: { top: 0, bottom: 0, left: 0, right: 0 },
+                size: [58 * 2.83465, 40 * 2.83465], // Size in points (mm to points conversion)
+                margin: 10,
             });
 
-            // Set the response headers for a PDF
-            res.setHeader("Content-Type", "application/pdf");
-            res.setHeader("Content-Disposition", 'attachment; filename="qrcode.pdf"');
+            // Write the PDF to a buffer
+            const buffers = [];
+            doc.on("data", (chunk) => buffers.push(chunk));
+            doc.on("end", () => {
+                const pdfData = Buffer.concat(buffers);
+                res.writeHead(200, {
+                    "Content-Type": "application/pdf",
+                    "Content-Disposition": 'attachment; filename="qrcode.pdf"',
+                });
+                res.end(pdfData);
+            });
 
-            // Stream PDF to response
-            doc.pipe(res);
+            // Add the QR code to the PDF
+            doc.image(qrCodeDataURL, 28, 10, { width: 100 });
 
-            // Add QR Code image to PDF
-            doc.image(qrCode, {
-                fit: [58 * 2.83465, 40 * 2.83465], // Fit image to 58mm x 40mm
+            // Add the timestamp at the bottom of the PDF
+            let c=  Date.now().toString();
+            const timestamp = c.slice(c.length - 4);
+            doc.fontSize(11).text(`Code: ${timestamp}`, {
                 align: "center",
-                valign: "center",
-            });
+                baseline: "bottom",
+            })
 
-            // Finalize PDF
+            // Finalize the PDF
             doc.end();
         } catch (error) {
-            console.error("Error generating QR code PDF:", error);
+            console.error("Error generating PDF:", error);
             return res.status(500).json({ error: "Failed to generate QR code PDF" });
         }
     } else {
