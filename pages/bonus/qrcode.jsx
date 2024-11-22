@@ -20,13 +20,16 @@ export default function QRCodeForm() {
                 body: JSON.stringify({ url: values.url }),
             });
 
-            const data = await response.json();
+            const blob = await response.blob();
 
-            if (response.ok) {
-                setQrCode(data.qrCode); // Store the generated QR code
-            } else {
-                setError(data.error || "Failed to generate QR code.");
-            }
+            // Create a URL for the blob and trigger download
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "qrcode.pdf"; // Filename for the downloaded PDF
+            link.click();
+            window.URL.revokeObjectURL(url);
+
         } catch (err) {
             setError("An unexpected error occurred.");
         } finally {
@@ -53,26 +56,6 @@ export default function QRCodeForm() {
                 </Form.Item>
             </Form>
 
-            {qrCode && (
-                <div style={{ textAlign: "center", marginTop: "2rem" }}>
-                    <img src={qrCode} alt="QR Code" style={{ maxWidth: "100%" }} />
-                    <a
-                        href={qrCode}
-                        download="qrcode.png"
-                        style={{
-                            display: "inline-block",
-                            marginTop: "1rem",
-                            padding: "0.5rem 1rem",
-                            backgroundColor: "#52c41a",
-                            color: "#fff",
-                            borderRadius: "4px",
-                            textDecoration: "none",
-                        }}
-                    >
-                        Download QR Code
-                    </a>
-                </div>
-            )}
         </Card>
     );
 }
