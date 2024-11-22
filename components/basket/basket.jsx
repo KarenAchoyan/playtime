@@ -101,13 +101,29 @@ const Basket = () => {
     }
 
     const fetchPaymentStatus = async (data) => {
+        values.products = data
+        try {
+            const response = await fetch('https://playtime.dahk.am/api/payment/signIn', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
+            });
 
-        window.location.href = "/payment/success";
+            if (response.ok) {
+                window.location.href = "/payment/success";
+            } else {
+                console.error('Failed to fetch payment status');
+            }
+        } catch (error) {
+            console.error('Error fetching payment status:', error);
+        }
+        // window.location.href = "/payment/success";
 
     };
 
     const handleSubmit = () => {
-
         fetchPaymentStatus(localStorage.getItem('basket') || "[]")
     };
     return (
